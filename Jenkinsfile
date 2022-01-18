@@ -3,11 +3,11 @@ pipeline {
 	stages {
 		stage('Start') {
 			steps {
-				echo 'Starting Pipeline Project'
+				echo 'Starting'
 			}
 		}
 		
-		stage('Check') {
+		stage('Permission') {
 			steps {
 				input('Do you want to proceed?')
 			}
@@ -15,28 +15,26 @@ pipeline {
 		
 		stage('Build') {
             steps {
-                echo 'Build with Maven'
+                bat 'Build in Progress'
             }
         }
         
         stage('Test') {
             steps {
-                echo 'Test my unit test cases'
+                bat 'Unit Test cases verification'
             }
         }
         
         stage('Check') {
             steps {
-                echo 'Verification '
+                bat 'Checking'
             }
         }      
 		
-	stage('Depoy') {
+	stage('Deploy') {
 		steps {
-			echo 'Deployment'
+			echo 'Deploy'
 		}
 		}		
 	}
-	
-
 }
