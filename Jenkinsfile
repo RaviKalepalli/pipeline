@@ -1,13 +1,13 @@
 pipeline {
 	agent any
 	stages {
-		stage('One') {
+		stage('Start') {
 			steps {
-				echo 'Hi, this is Soumitra from roytuts'
+				echo 'Starting Pipeline Project'
 			}
 		}
 		
-		stage('Two') {
+		stage('Check') {
 			steps {
 				input('Do you want to proceed?')
 			}
@@ -15,26 +15,30 @@ pipeline {
 		
 		stage('Build') {
             steps {
-                bat './gradlew build'
+                echo 'Build with Maven'
             }
         }
         
         stage('Test') {
             steps {
-                bat './gradlew test'
+                echo 'Test my unit test cases'
             }
         }
         
         stage('Check') {
             steps {
-                bat './gradlew check'
+                echo 'Verification '
             }
         }      
 		
-		stage('Five') {
-			steps {
-				echo 'Finished'
-			}
+	stage('Depoy') {
+		steps {
+			echo 'Deployment'
+		}
 		}		
 	}
+	catch(all) {
+        currentBuild.result = 'FAILURE'
+    }   
+
 }
