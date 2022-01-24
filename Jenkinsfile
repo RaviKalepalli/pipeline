@@ -1,7 +1,8 @@
 pipeline {
 	agent any
 	environment {
-      PATH = "D:\apache-maven-3.6.3"
+      PATH = "D:\apache-maven-3.6.3:$PATH"
+		
  		 }
 	stages {
 		stage('Start') {
