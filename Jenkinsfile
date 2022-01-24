@@ -15,7 +15,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
-            	sh 'mvn clean install'
+            	sh 'pwd'
 		    echo 'Ravi'
             }
         }
