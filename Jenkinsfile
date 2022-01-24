@@ -11,11 +11,6 @@ pipeline {
 			}
 		}
 		
-		stage('Permission') {
-			steps {
-				input('Do you want to proceed?')
-			}
-		}
 		
 		stage('Build') {
             steps {
@@ -25,22 +20,8 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                bat 'Unit Test cases verification'
-            }
-        }
         
-        stage('Check') {
-            steps {
-                bat 'Checking'
-            }
-        }      
 		
-	stage('Deploy') {
-		steps {
-			echo 'Deploy'
-		}
-		}		
+		
 	}
 }
