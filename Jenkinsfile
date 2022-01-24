@@ -20,7 +20,7 @@ pipeline {
 		stage('Build') {
             steps {
 		echo 'Ravi121212'
-            	sh 'pwd'
+            	sh 'mvn install'
 		   
             }
         }
